@@ -61,18 +61,17 @@ ngspice offers a spice simulator to model active, passive, analog and digital el
 
 ### Schematics
 
-
 A simple current mirror without operational amplifiers is incorporated in the design to achieve stable reference voltage output.
 
-![](/pre-layout/snapshots/bandgap_ref_cir.jpg.JPG)
+![](/pre-layout/snapshots/bandgap_ref_cir.jpg)
 
 ### Pre-layout Simulations
 
-Reference Voltage (vbgp) vs variations in supply voltage Vdd (2.7V to 3.6V)
+Reference Voltage (vbgp) vs variations in supply voltage Vdd (2.7V to 3.9V)
 
 ![](/pre-layout/snapshots/pre_sim_vv.jpg)
 
-Reference Voltage (vbgp) vs variations in temperature (-40 to 120) degree
+Reference Voltage (vbgp) vs variations in temperature (-40 to 140) degree
 
 ![](/pre-layout/snapshots/pre_sim_tv.jpg)
 
