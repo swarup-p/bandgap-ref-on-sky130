@@ -1,4 +1,5 @@
 **.subckt bandgap_ref_cir
+** bangap reference circuit implementation using sky130 libraries
 XM1 net1 net1 Vrefl GND sky130_fd_pr__nfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
