@@ -26,11 +26,8 @@ Implementation of bandgap reference circuit on Skywater's 130nm pdk.
       <a href="#schematics-and-simulations">Schematics and Simulations</a>
 	  	<ul>
         <li><a href="#schematics">Schematics</a></li>
-        <li><a href="#simulations">Simulations</a></li>
+        <li><a href="#pre-layout simulations">Pre-layout Simulations</a></li>
       </ul>
-    </li>
-	<li>
-      <a href="#next-steps">Next Steps</a>
     </li>
   </ol>
 </details>
@@ -52,7 +49,8 @@ Open-source tools are used to design and simulate bandgap reference circuit.
 
 ### XSCHEM
 
-XSCHEM is a schematic capture and netlisting EDA tool. In addition to Xschem, a version Xschem_sky130 which is optimised to work with Skywater's 130nm pdk is used. Please check this link for more information, https://xschem.sourceforge.io/stefan/index.html
+XSCHEM is a schematic capture and netlisting EDA tool. In addition to Xschem, a version Xschem_sky130 which is optimised to work with Skywater's 130nm pdk is used. Please check this link for more information, 
+https://xschem.sourceforge.io/stefan/index.html
 
 ### ngspice
 
@@ -63,19 +61,33 @@ ngspice offers a spice simulator to model active, passive, analog and digital el
 
 ### Schematics
 
-![](/snapshots/b1_bandgap_ref_circuit.JPG)
 
-A simple current mirror without operational amplifiers is incorporated in the design to achieve stable reference voltage output. Different parts of the circuit such as start-up circuit, beta multiplier reference, CTAT ad PTAT are also marked.
+A simple current mirror without operational amplifiers is incorporated in the design to achieve stable reference voltage output.
 
-### Simulations
+![](/pre-layout/snapshots/bandgap_ref_cir.jpg.JPG)
 
-![](/snapshots/b1_bgr_Vref.JPG)
+### Pre-layout Simulations
 
-A variation in reference voltage output at temperature of 27 degree celcius with respect to supply voltage sweep does not show stable results.
+Reference Voltage (vbgp) vs variations in supply voltage Vdd (2.7V to 3.6V)
 
-<!-- Next Steps -->
-## Next Steps
+![](/pre-layout/snapshots/pre_sim_vv.jpg)
 
-  - Check the Vref reference voltage output with temperature sweep from -40 to 120.
-  - Tune beta multiplier stage to get more stability
-  - Add cascoding ampliefier to improve performance
+Reference Voltage (vbgp) vs variations in temperature (-40 to 120) degree
+
+![](/pre-layout/snapshots/pre_sim_tv.jpg)
+
+Temperature coefficient
+
+![](/pre-layout/snapshots/pre_sim_tc.jpg)
+
+Voltage coefficient
+
+![](/pre-layout/snapshots/pre_sim_vc.jpg)
+
+Start-up circuit
+
+![](/pre-layout/snapshots/pre_sim_startup.jpg)
+
+
+
+
