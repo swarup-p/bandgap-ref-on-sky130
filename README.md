@@ -59,7 +59,7 @@ ngspice offers a spice simulator to model active, passive, analog and digital el
 <!-- Pre-Layout Schematics and Simulations -->
 ## Pre-Layout Schematics and Simulations
 
-Install XSCHEM to run schematics and simulation files in this repo. XSCHEM has a version that supports Sky130 pdk, please follow set up steps mentioned in this video,
+Install XSCHEM to run schematic and simulation files in this repo. XSCHEM has a version that supports Sky130 pdk, please follow set up steps mentioned in this video,
 https://xschem.sourceforge.io/stefan/xschem_man/video_tutorials/install_xschem_sky130_and_ngspice.mp4
 
 After installation, navigate to XSCHEM work directory, for example,
@@ -68,17 +68,17 @@ After installation, navigate to XSCHEM work directory, for example,
 
 Clone this repository using command
 
-	git clone https://github.com/swarup-p/bandgap-ref-on-sky130
+	git clone https://github.com/swarup-p/bandgap-ref-on-sky130.git
 	
-Navigate to a schematic file, for example
+Navigate to a schematic file, for example,
 
-	cd /bandgap-ref-on-sky130/pre-layout/spice-deck
+	cd /bandgap-ref-on-sky130/pre-layout/spice-deck/
 	
 Run schematic file,
   
 	xschem bandgap_schematic.sch
 	
-Go to commands sections in schematic file uncomment required part in 'user architecture code' and run spice deck with built-in ngspice tool.
+Go to commands sections in schematic file, uncomment required part in 'user architecture code' and run spice deck with built-in ngspice tool.
 
 
 ### Schematics
@@ -89,7 +89,7 @@ A simple current mirror without operational amplifiers is incorporated in the de
 
 ### Simulations
 
-Reference Voltage (vbgp) vs variations in supply voltage Vdd (2V to 4V)
+Reference voltage (vbgp) vs variations in supply voltage Vdd (2V to 4V)
 
 	*** plot vbgp with variation in supply voltage
 	Vdd VDD GND 3.3
@@ -103,7 +103,7 @@ Reference Voltage (vbgp) vs variations in supply voltage Vdd (2V to 4V)
 
 ![](/pre-layout/snapshots/pre_vv_check.jpg)
 
-Reference Voltage (vbgp) vs variations in temperature (-40 to 140) degree
+Reference voltage (vbgp) vs variations in temperature (-40 to 140) degree
 
 	*** plot vbgp with variation in temperature @3.3V
 	Vdd VDD GND 3.3
