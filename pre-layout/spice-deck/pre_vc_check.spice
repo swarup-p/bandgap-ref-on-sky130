@@ -51,67 +51,12 @@ XM6 net6 net6 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=80 W=0.5 nf=1 ad='int((nf+1
 .lib ../sky130_fd_pr/models/sky130_tt_bgr.lib.spice tt
 .options savecurrents
 
-*** plot vbgp with variation in supply voltage
-*Vdd VDD GND 3.3
-*V_en en GND 3.3
-*.dc Vdd 2 4 0.1
-*.control
-*run
-*print Vbgp
-*plot V(Vbgp)
-*.endc
-
-*** plot vbgp with variation in temperature @3.3V
-*Vdd VDD GND 3.3
-*V_en en GND 3.3
-*.dc temp -40 140 1
-*.control
-*run
-*print V(Vbgp)
-*plot V(Vbgp)
-*.endc
 
 *** plot voltage coefficient
-*Vdd VDD GND 3.3
-*V_en en GND 3.3
-*.dc Vdd 2 4 0.1
-*.control
-*run
-*plot deriv(V(Vbgp))
-*.endc
-
-*** plot temperature coefficient
-*Vdd VDD GND 3.3
-*V_en en GND 3.3
-*.dc temp -40 140 1
-*.control
-*run
-*plot deriv(V(Vbgp))/1.202344
-*.endc
-
-*** check start up circuit
+Vdd VDD GND 3.3
 V_en en GND 3.3
-Vdd VDD GND PULSE(0 3.3 50us 40us 0us 200us 400us 0)
-.tran 1us 200us
+.dc Vdd 2 4 0.1
 .control
 run
-plot V(Vdd) V(Vbgp)
+plot deriv(V(Vbgp))
 .endc
-
-*** enable pin
-*Vdd VDD GND 3.3
-*V_en en GND PULSE(0 3.3 50us 0 0 10us 20us 0)
-*.tran 1u 150us
-*.control
-*run
-*plot V(en) V(Vbgp)
-*.endc
-
-
-**** end user architecture code
-**.ends
-.GLOBAL GND
-.GLOBAL VDD
-.GLOBAL en
-** flattened .save nodes
-.end

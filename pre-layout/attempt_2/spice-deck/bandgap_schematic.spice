@@ -48,7 +48,8 @@ XM6 net6 net6 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=80 W=0.5 nf=1 ad='int((nf+1
 **** begin user architecture code
 
 
-.lib ../sky130_fd_pr/models/sky130_tt_bgr.lib.spice tt
+.lib /home/swarup/Desktop/vsdflow/work/tools/openlane_working_dir/pdks/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/sky130.lib.spice tt
+.include /home/swarup/Desktop/vsdflow/work/tools/openlane_working_dir/pdks/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/sky130_fd_pr__model__pnp.model.spice
 .options savecurrents
 
 *** plot vbgp with variation in supply voltage
