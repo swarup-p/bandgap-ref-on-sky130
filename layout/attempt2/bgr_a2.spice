@@ -1,0 +1,12 @@
+* SPICE3 file created from bgr_a2.ext - technology: sky130A
+
+.option scale=10000u
+
+X0 VbiasP a_190_601# a_190_1028# a_200_110# sky130_fd_pr__nfet_g5v0d10v5 w=300 l=100
+X1 w_0_9600# a_190_601# a_190_601# w_0_9600# sky130_fd_pr__pfet_g5v0d10v5 w=50 l=8000
+X2 a_190_1028# VbiasN a_190_601# a_200_110# sky130_fd_pr__nfet_g5v0d10v5 w=300 l=100
+C0 m1_0_9650# w_0_9600# 114.37fF
+C1 m1_0_9650# a_200_110# 24.10fF **FLOATING
+C2 a_190_1028# a_200_110# 154.39fF
+C3 a_190_601# a_200_110# 18.73fF
+C4 w_0_9600# a_200_110# 186.55fF

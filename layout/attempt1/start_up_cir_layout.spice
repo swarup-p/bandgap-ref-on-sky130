@@ -1,0 +1,12 @@
+* SPICE3 file created from start_up_cir_layout.ext - technology: sky130A
+
+.option scale=10000u
+
+X0 a_375_1135# a_375_1135# a_200_110# a_200_110# sky130_fd_pr__nfet_g5v0d10v5 w=100 l=300
+X1 a_375_1135# a_375_1135# a_200_110# a_200_110# sky130_fd_pr__nfet_g5v0d10v5 w=100 l=300
+X2 a_375_1135# a_375_1135# w_0_9600# w_0_9600# sky130_fd_pr__pfet_g5v0d10v5 w=8000 l=50
+C0 w_0_9600# m1_0_9650# 114.36fF
+C1 w_0_9600# a_375_1135# 3.89fF
+C2 m1_0_0# a_200_110# 153.85fF **FLOATING
+C3 m1_0_9650# a_200_110# 24.10fF **FLOATING
+C4 w_0_9600# a_200_110# 189.97fF
