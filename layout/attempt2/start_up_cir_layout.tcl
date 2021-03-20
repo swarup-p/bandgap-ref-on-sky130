@@ -38,7 +38,7 @@ for {set i 1} {$i <= $sc_number_of_li} {incr i} {
 
 #For gate and drain connection#
 set sc_li_width 17
-set sc_li_height 4078
+set sc_li_height 8026
 set sc_box_position_x [expr $x+325]
 set sc_box_position_y [expr $y+1506]
 box position $sc_box_position_x $sc_box_position_y 
@@ -69,12 +69,18 @@ for {set j 1} {$j <= $sc_mos_terminals} {incr j} {
 #Polycontact starts here#
 #Contact for gate-drain connection#
 set sc_pc_width 17
-set sc_pc_height 34
+set sc_pc_height 100
+set sc_number_of_pc 40
+set sc_pc_spacing_y 100
 set sc_box_position_x [expr $x+325]
-set sc_box_position_y [expr $y+5532]
-box position $sc_box_position_x $sc_box_position_y 
-box size $sc_pc_width $sc_pc_height
-paint pcontact
+set sc_box_position_y [expr $y+1582]
+for {set i 1} {$i <= $sc_number_of_pc} {incr i} { 
+	box position $sc_box_position_x $sc_box_position_y
+	box size $sc_pc_width $sc_pc_height
+	paint pcontact
+	set sc_box_position_y [expr $sc_box_position_y+$sc_pc_height+$sc_pc_spacing_y]
+} 
+
 
 #Polycontacts ends here#
 

@@ -59,7 +59,7 @@ set cm_li_width 500
 set cm_li_height 17
 set cm_number_of_mos 3
 set cm_box_position_x [expr $x+768]
-set cm_box_position_y [expr $y+9274]
+set cm_box_position_y [expr $y+7707]
 set cm_mos_spacing 286 
 for {set i 1} {$i <= $cm_number_of_mos} {incr i} {
 	box position $cm_box_position_x $cm_box_position_y
@@ -105,7 +105,7 @@ set cm_pc_height 17
 set cm_number_of_mos 3
 set cm_num_of_pc 3
 set cm_box_position_x [expr $x+828]
-set cm_box_position_y [expr $y+9274]
+set cm_box_position_y [expr $y+7707]
 set cm_mos_spacing 406
 set cm_pc_space_x 100
 for {set j 1} {$j <= $cm_number_of_mos} {incr j} { 
@@ -190,7 +190,7 @@ set cm_li_width 500
 set cm_li_height 17
 set cm_number_of_mos 2
 set cm_box_position_x [expr $x+768]
-set cm_box_position_y [expr $y+5737]
+set cm_box_position_y [expr $y+7304]
 set cm_mos_spacing 286 
 for {set i 1} {$i <= $cm_number_of_mos} {incr i} {
 	box position $cm_box_position_x $cm_box_position_y
@@ -233,7 +233,7 @@ set cm_pc_height 17
 set cm_number_of_mos 2 
 set cm_num_of_pc 3
 set cm_box_position_x [expr $x+828]
-set cm_box_position_y [expr $y+5737]
+set cm_box_position_y [expr $y+7304]
 set cm_mos_spacing 406
 set cm_pc_space_x 100
 for {set j 1} {$j <= $cm_number_of_mos} {incr j} { 

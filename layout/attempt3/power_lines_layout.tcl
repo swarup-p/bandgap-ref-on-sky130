@@ -4,23 +4,23 @@ set y 0
 box position $x $y
 
 ##Create ground strip## 
-set ground_strip_width 10000
+set ground_strip_width 4500
 set ground_strip_height 500
-box position $x $y
+box position $x [expr $y+890]
 box size $ground_strip_width $ground_strip_height
 paint metal1
 
 ##Create local interconnect layer for ground strip##
-set li_ground_strip_width 9800
+set li_ground_strip_width 4300
 set li_ground_strip_height 280
-box position [expr $x+100] [expr $y+110]
+box position [expr $x+100] [expr $y+1000]
 box size $li_ground_strip_width $li_ground_strip_height
 paint li
 
 ##Create psubstrate diffusion layer for ground strip##
-set mvpsubdiff_ground_strip_width 9600
+set mvpsubdiff_ground_strip_width 4100
 set mvpsubdiff_ground_strip_height 280
-box position [expr $x+200] [expr $y+110]
+box position [expr $x+200] [expr $y+1000]
 box size $mvpsubdiff_ground_strip_width $mvpsubdiff_ground_strip_height
 paint mvpsubdiff
 
@@ -30,7 +30,7 @@ set mvpsc_height 100
 set mvpsc_spacing 300
 set number_of_mvpsc [expr $mvpsubdiff_ground_strip_width/300]
 set box_position_x [expr $x+320]
-set box_position_y [expr $y+200]
+set box_position_y [expr $y+1090]
 for {set i 1} {$i <= $number_of_mvpsc} {incr i} {
 	box position $box_position_x $box_position_y
 	box size $mvpsc_width $mvpsc_height
@@ -38,29 +38,43 @@ for {set i 1} {$i <= $number_of_mvpsc} {incr i} {
 	set box_position_x [expr $box_position_x+$mvpsc_spacing]
 } 
 
+##Create metal1 to locali contact area in ground strip##
+set licon_width 100
+set licon_height 100
+set licon_spacing 300
+set number_of_licon [expr $mvpsubdiff_ground_strip_width/300]
+set box_position_x [expr $x+320]
+set box_position_y [expr $y+1090]
+for {set i 1} {$i <= $number_of_licon} {incr i} {
+	box position $box_position_x $box_position_y
+	box size $licon_width $licon_height
+	paint licon
+	set box_position_x [expr $box_position_x+$licon_spacing]
+} 
+
 ##Create power strip##
-set power_strip_width 10000
+set power_strip_width 4500
 set power_strip_height 300
-box position $x [expr $x+9650] 
+box position $x [expr $y+9650] 
 box size $power_strip_width $power_strip_height
 paint metal1
 
 ##Create n-well for power strip##
-set nw_power_strip_width 10000
+set nw_power_strip_width 4500
 set nw_power_strip_height 400
-box position $x [expr $x+9600]
+box position $x [expr $y+9600]
 box size $nw_power_strip_width $nw_power_strip_height
 paint nwell
 
 ##Create local interconnect layer for power strip##
-set li_power_strip_width 9800
+set li_power_strip_width 4300
 set li_power_strip_height 280
 box position [expr $x+100] [expr $y+9660]
 box size $li_power_strip_width $li_power_strip_height
 paint li
 
 ##Create nsubstrate diffusion layer for power strip##
-set mvnsubdiff_power_strip_width 9600
+set mvnsubdiff_power_strip_width 4100
 set mvnsubdiff_power_strip_height 280
 box position [expr $x+200] [expr $y+9660]
 box size $mvnsubdiff_power_strip_width $mvnsubdiff_power_strip_height
@@ -78,4 +92,18 @@ for {set i 1} {$i <= $number_of_mvnsc} {incr i} {
 	box size $mvnsc_width $mvnsc_height
 	paint mvnsc
 	set box_position_x [expr $box_position_x+$mvpsc_spacing]
+} 
+
+##Create metal1 to locali contact area in power strip##
+set licon_width 100
+set licon_height 100
+set licon_spacing 300
+set number_of_licon [expr $mvnsubdiff_power_strip_width/300]
+set box_position_x [expr $x+320]
+set box_position_y [expr $y+9750]
+for {set i 1} {$i <= $number_of_licon} {incr i} {
+	box position $box_position_x $box_position_y
+	box size $licon_width $licon_height
+	paint licon
+	set box_position_x [expr $box_position_x+$licon_spacing]
 } 

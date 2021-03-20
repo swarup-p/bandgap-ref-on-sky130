@@ -1,0 +1,17 @@
+* SPICE3 file created from res_trial.ext - technology: sky130A
+
+.option scale=10000u
+
+X0 a_0_163# a_285_163# SUB sky130_fd_pr__res_xhigh_po w=35 l=69
+X1 a_0_163# a_492_326# SUB sky130_fd_pr__res_xhigh_po w=35 l=276
+X2 a_0_0# a_251_0# SUB sky130_fd_pr__res_xhigh_po w=35 l=35
+C0 a_285_163# a_492_326# 0.00fF
+C1 a_285_163# a_0_163# 0.02fF
+C2 a_0_0# a_0_163# 0.12fF
+C3 a_285_163# a_251_0# 0.10fF
+C4 a_0_0# a_251_0# 0.04fF
+C5 a_251_0# SUB 0.58fF
+C6 a_0_0# SUB 0.58fF
+C7 a_285_163# SUB 0.58fF
+C8 a_492_326# SUB 0.58fF
+C9 a_0_163# SUB 1.27fF
