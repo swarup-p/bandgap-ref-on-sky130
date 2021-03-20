@@ -29,6 +29,12 @@ Implementation of bandgap reference circuit on Skywater's 130nm pdk.
         <li><a href="#simulations">Simulations</a></li>
       </ul>
     </li>
+	<li>
+      <a href="#layout">Layout</a>
+    </li>
+	<li>
+      <a href="#post-layout">Post-Layout Simulations</a>
+    </li>
   </ol>
 </details>
 
@@ -115,4 +121,42 @@ Run below commands in ngspice terminal to get the simulation results.
 
 ![](/pre-layout/snapshots/pre_enable_check.PNG)
 
+<!-- Layout -->
+## Layout
 
+![](/layout/attempt3/bgr_a3.PNG)
+
+<!-- Post-Layout Simulations -->
+## Post-Layout Simulations
+
+Here are the steps to run simulation files,
+
+	git clone https://github.com/swarup-p/bandgap-ref-on-sky130.git
+	cd bandgap-ref-on-sky130/post-layout/spice-deck/
+	ngspice
+	
+Run below commands in ngspice terminal to get the simulation results.
+
+  Reference voltage (vbgp) vs variations in supply voltage Vdd (2V to 4V)
+
+	source post_vv_check.spice
+
+![](/post-layout/snapshots/post_vv_check.PNG)
+
+  Reference voltage (vbgp) vs variations in temperature (-40 to 140) degree
+
+	source post_tv_check.spice
+
+![](/post-layout/snapshots/post_tv_check.PNG)
+
+  Voltage coefficient
+
+	source post_vc_check.spice
+
+![](/post-layout/snapshots/post_vc_check.PNG)
+
+  Temperature coefficient
+
+	source post_tc_check.spice
+
+![](/post-layout/snapshots/post_tc_check.PNG)
