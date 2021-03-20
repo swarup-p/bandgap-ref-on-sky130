@@ -124,7 +124,7 @@ Run below commands in ngspice terminal to get the simulation results.
 <!-- Layout -->
 ## Layout
 
-![](/layout/attempt3/bgr_a3.PNG)
+![](/layout/attempt3/bgr_a3.png)
 
 <!-- Post-Layout Simulations -->
 ## Post-Layout Simulations
