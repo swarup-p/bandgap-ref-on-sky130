@@ -54,6 +54,7 @@ Implementation of bandgap reference circuit on Skywater's 130nm pdk.
 	<li>
 	  <a href="#bandgap performance parameters [post-layout]">Bandgap Performance Parameters [Post-Layout]</a>
     </li>
+	<li><a href="#future work">Future Work</a></li>
 	<li><a href="#references">References</a></li>
 	<li><a href="#acknowledgement">Acknowledgement</a></li>
 	<li><a href="#contact-information">Contact Information</a></li>
@@ -62,11 +63,11 @@ Implementation of bandgap reference circuit on Skywater's 130nm pdk.
 
 ## Introduction
 
-An example of a bandgap reference circuit implementation on Skywater’s open-source process design kit (pdk) is proposed here. A simple bandgap topology is valuated with a set of simulations and then implemented in open-source EDA tools. In the design, a current mirror without operational amplifier is used to keep the topology simple. Please check [here] (/report/Stage_1_Introduction_to_BGR.pdf) for more information.
+A bandgap reference circuit implementation on Skywater’s open-source 130nm process design kit (pdk) is proposed here. A simple bandgap topology is valuated with a set of simulations and then implemented in open-source EDA tools. In the design, a current mirror without operational amplifier is used to keep the topology simple. For more information , please check *[here] (/report/Stage_1_Introduction_to_BGR.pdf).
 
 ## Requirements
 
-Design specifications and requirements are listed [here] (/requirements/bandgap_circuit_requirements.pdf) .
+Design specifications and requirements are listed *[here] (/requirements/bandgap_circuit_requirements.pdf).
 
 ## Tools
 
@@ -74,13 +75,13 @@ Open-source tools are used to design and simulate bandgap reference circuit.
 
 ### XSCHEM
 
-XSCHEM is a schematic capture and netlisting EDA tool. In addition to Xschem, a version named Xschem_sky130 which is optimised to work with Skywater's 130nm pdk is used. For more information, please check this [link] (https://xschem.sourceforge.io/stefan/index.html) .
+XSCHEM is a schematic capture and netlisting EDA tool. In addition to Xschem, a version named Xschem_sky130 which is optimised to work with Skywater's 130nm pdk is used. For more information, please check this *[link] (https://xschem.sourceforge.io/stefan/index.html).
 
-Although XSCHEM is not required to run simulation files in this repository, it can be installed with built-in ngspice tool and support for sky130 pdk. Please follow set up steps mentioned in [this] (https://xschem.sourceforge.io/stefan/xschem_man/video_tutorials/install_xschem_sky130_and_ngspice.mp4) video.
+Although XSCHEM is not required to run simulation files in this repository, it can be installed with built-in ngspice tool and support for sky130 pdk. Please follow set up steps mentioned in *[this video] (https://xschem.sourceforge.io/stefan/xschem_man/video_tutorials/install_xschem_sky130_and_ngspice.mp4).
 
 ### ngspice
 
-ngspice offers a spice simulator to model active, passive, analog and digital elements of a device according to parameters provided by semiconductor manufacturer. For more information, please check this [link] (http://ngspice.sourceforge.net/) .
+ngspice offers a spice simulator to model active, passive, analog and digital elements of a device according to parameters provided by semiconductor manufacturer. For more information, please check this *[link] (http://ngspice.sourceforge.net/).
 
   Installation on Ubuntu
   
@@ -88,7 +89,7 @@ ngspice offers a spice simulator to model active, passive, analog and digital el
 
 ### Magic
 
-Magic is a opensource VLSI layout tool. Please check [link] (http://opencircuitdesign.com/magic/), for more information on this tool.
+Magic is a opensource VLSI layout tool. Please check *[link] (http://opencircuitdesign.com/magic/).
 
   Installation on Ubuntu
   
@@ -101,7 +102,7 @@ Magic is a opensource VLSI layout tool. Please check [link] (http://opencircuitd
 	
 ## Schematic
 
-A simple current mirror without operational amplifiers is incorporated in the design to achieve stable reference voltage output.
+A simple current mirror topology is implemented to achieve stable reference voltage output.
 
 ![](/schematic/avsdbgp_3V3.PNG)
 
@@ -234,6 +235,16 @@ Check the current values when enable terminal is at logic 1 and when enable term
 |VDD|Supply Voltage|3.2|3.3|3.6|V|T=-40C to 140C|
 |IDD|Supply Current||3.954||uA|EN=1|
 |IDD|Supply Current||607.836||nA|EN=0|
+
+## Future Work
+
+  Include cascode transistors in the design to improve stability of output reference voltage.
+  
+  To avoid tunneling effect at the enable terminal, include resistor at the gate terminal of enable transistor.
+  
+  Improve enable logic to consume low current when enable logic is 0.
+  
+  Perform PNR of the design using openLANE flow.
 
 ## References
 
