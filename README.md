@@ -63,7 +63,7 @@ Implementation of bandgap reference circuit on Skywater's open-source 130nm pdk.
 
 ## Introduction
 
-A bandgap reference circuit implementation on Skywater’s open-source 130nm process design kit (pdk) is proposed here. A simple bandgap topology is valuated with a set of simulations and then implemented in open-source EDA tools. In the design, a current mirror without operational amplifier is used to keep the topology simple. For more information , please check [here](/report/Stage_1_Introduction_to_BGR.pdf).
+A bandgap reference circuit implementation on Skywater’s open-source 130nm process design kit (pdk) is proposed here. A simple bandgap topology is valuated with a set of simulations and then implemented in open-source EDA tools. In the design, a current mirror without operational amplifier is used to keep the topology simple. For more information, please check [here](/report/Stage_1_Introduction_to_BGR.pdf).
 
 ![](/schematic/avsdbgp_3V3_concept.PNG)
 
