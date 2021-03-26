@@ -1,5 +1,5 @@
 # bandgap-ref-on-sky130
-Implementation of bandgap reference circuit on Skywater's 130nm pdk.
+Implementation of bandgap reference circuit on Skywater's open-source 130nm pdk.
 
 <br />
 <p align="center">
@@ -64,6 +64,8 @@ Implementation of bandgap reference circuit on Skywater's 130nm pdk.
 ## Introduction
 
 A bandgap reference circuit implementation on Skywater’s open-source 130nm process design kit (pdk) is proposed here. A simple bandgap topology is valuated with a set of simulations and then implemented in open-source EDA tools. In the design, a current mirror without operational amplifier is used to keep the topology simple. For more information , please check [here](/report/Stage_1_Introduction_to_BGR.pdf).
+
+![](/schematic/avsdbgp_3V3.PNG)
 
 ## Requirements
 
@@ -263,9 +265,9 @@ Here are some reference links used to learn to design in open source EDA tools a
 ## Acknowledgement
 
 * [Kunal Ghosh - Co-founder (VSD Corp. Pvt. Ltd)](https://github.com/kunalg123)
-* [Tim Edwards - Senior Vice President of Analog and Design at efabless corporation]
-* [Anmol Purty - VSD Intern]
-* [Sheryl Serrao - VSD Intern]
+* Tim Edwards - Senior Vice President of Analog and Design at efabless corporation
+* Anmol Purty - VSD Intern
+* Sheryl Serrao - VSD Intern
 
 ## Contact Information
 
