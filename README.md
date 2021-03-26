@@ -73,7 +73,7 @@ ngspice offers a spice simulator to model active, passive, analog and digital el
 
 A simple current mirror without operational amplifiers is incorporated in the design to achieve stable reference voltage output.
 
-![](/pre-layout/snapshots/bandgap_schematic.jpg)
+![](/schematic/avsdbgp_3V3.ps)
 
 ### Simulations
 
@@ -119,12 +119,14 @@ Run below commands in ngspice terminal to get the simulation results.
 
 	source pre_enable_check.spice
 
-![](/pre-layout/snapshots/pre_enable_check.PNG)
+![](/pre-layout/snapshots/pre_enable_V_check.PNG)
+![](/pre-layout/snapshots/pre_enable_I_check.PNG)
 
 <!-- Layout -->
 ## Layout
 
-![](/layout/attempt3/bgr_a3.png)
+![](/layout/avsdbgp_3V3.PNG)
+![](/layout/avsdbgp_3V3_snap1.PNG)
 
 <!-- Post-Layout Simulations -->
 ## Post-Layout Simulations
