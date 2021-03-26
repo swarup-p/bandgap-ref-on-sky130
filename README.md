@@ -181,7 +181,7 @@ Here are the steps to run simulation files,
 	
 Run below commands in ngspice terminal to get the simulation results.
 
-### Voltage Variation
+### Voltage Variation Check
 
 Reference voltage (vbgp) vs variations in supply voltage Vdd (2V to 4V)
 
@@ -189,7 +189,7 @@ Reference voltage (vbgp) vs variations in supply voltage Vdd (2V to 4V)
 
 ![](/post-layout/snapshots/post_vv_check.PNG)
 
-### Temperature Variation
+### Temperature Variation Check
 
 Reference voltage (vbgp) vs variations in temperature (-40 to 140) degree
 
