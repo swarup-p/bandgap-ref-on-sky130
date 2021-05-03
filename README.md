@@ -1,4 +1,4 @@
-# bandgap-ref-on-sky130
+# avsdbgp_3v3_sky130_v1
 Implementation of bandgap reference circuit on Skywater's open-source 130nm pdk.
 
 <br />
@@ -71,6 +71,20 @@ A bandgap reference circuit implementation on Skywater’s open-source 130nm pro
 
 Design specifications and requirements are listed [here](/requirements/bandgap_circuit_requirements.pdf).
 
+## Bandgap Performance Parameters [Post-Layout]
+
+| Parameter| Description| Min | Type | Max | Unit | Condition |
+| :---:  | :-: | :-: | :-: | :---:  | :-: | :-: |
+|Technology| 130 nm CMOS Process |
+|RL|Load resistance at Vbgp terminal | 100|||Mohm|VDD=3.3V, T=27C|
+|Vbgp|Output Reference voltage|1.197642|1.201057|1.212476|V|T=-40 to 140C, VDD=3.3V|
+|Vbgp|Output Reference voltage|1.178285|1.201057|1.211677|V|VDD=2.7V to VDD=3.6V, T=27C|
+|TC_vbgp|Temperature Coefficient of Vbgp||6.8717||ppm/C|T=-40 to 140C, VDD=3.3V|
+|VC_vbgp|Voltage Coefficient of Vbgp||2.7802||%/V|VDD=2.7V to 3.6, T=27C|
+|VDD|Supply Voltage|3.2|3.3|3.6|V|T=-40C to 140C|
+|IDD|Supply Current||3.954||uA|EN=1|
+|IDD|Supply Current||607.836||nA|EN=0|
+
 ## Tools
 
 Open-source tools are used to design and simulate bandgap reference circuit.
@@ -113,7 +127,7 @@ A simple current mirror topology is implemented to achieve stable reference volt
 Here are the steps to run simulation files,
 
 	git clone https://github.com/swarup-p/bandgap-ref-on-sky130.git
-	cd bandgap-ref-on-sky130/pre-layout/spice-deck/
+	cd avsdbgp_3v3_sky130_v1/pre-layout/spice-deck/
 	ngspice
 
 Run below commands in ngspice terminal to get the simulation results.
@@ -154,6 +168,8 @@ Reference voltage (vbgp) vs variations in temperature (-40 to 140) degree
 
 ### Enable Logic Check
 
+Check the current values when enable terminal is at logic 1 and when enable terminal is at logic 0.
+
 	source pre_enable_check.spice
 
 ![](/pre-layout/snapshots/pre_enable_V_check.PNG)
@@ -165,7 +181,7 @@ Reference voltage (vbgp) vs variations in temperature (-40 to 140) degree
 
 Check the layout file in magic,
 
-	cd bandgap-ref-on-sky130/layout/
+	cd avsdbgp_3v3_sky130_v1/layout/
 	
 	magic -T ../lib/sky130A.tech avsdbgp_3V3.mag &
 
@@ -176,7 +192,7 @@ Check the layout file in magic,
 Here are the steps to run simulation files,
 
 	git clone https://github.com/swarup-p/bandgap-ref-on-sky130.git
-	cd bandgap-ref-on-sky130/post-layout/spice-deck/
+	cd avsdbgp_3v3_sky130_v1/post-layout/spice-deck/
 	ngspice
 	
 Run below commands in ngspice terminal to get the simulation results.
@@ -224,25 +240,11 @@ Check the current values when enable terminal is at logic 1 and when enable term
 ![](/post-layout/snapshots/post_enable_V_check.PNG)
 ![](/post-layout/snapshots/post_enable_I_check.PNG)
 
-## Bandgap Performance Parameters [Post-Layout]
-
-| Parameter| Description| Min | Type | Max | Unit | Condition |
-| :---:  | :-: | :-: | :-: | :---:  | :-: | :-: |
-|Technology| 130 nm CMOS Process |
-|RL|Load resistance at Vbgp terminal | 100|||Mohm|VDD=3.3V, T=27C|
-|Vbgp|Output Reference voltage|1.197642|1.201057|1.212476|V|T=-40 to 140C, VDD=3.3V|
-|Vbgp|Output Reference voltage|1.178285|1.201057|1.211677|V|VDD=2.7V to VDD=3.6V, T=27C|
-|TC_vbgp|Temperature Coefficient of Vbgp||6.8717||ppm/C|T=-40 to 140C, VDD=3.3V|
-|VC_vbgp|Voltage Coefficient of Vbgp||2.7802||%/V|VDD=2.7V to 3.6, T=27C|
-|VDD|Supply Voltage|3.2|3.3|3.6|V|T=-40C to 140C|
-|IDD|Supply Current||3.954||uA|EN=1|
-|IDD|Supply Current||607.836||nA|EN=0|
-
 ## Future Work
 
-  1. Include cascode transistors in the design to improve stability of output reference voltage.
+  1. Add cascode transistors in the design to improve stability of output reference voltage.
   
-  2. To avoid tunneling effect at the enable terminal, include resistor at the gate terminal of enable transistor.
+  2. Add a resistor at the gate terminal of enable transistor.
   
   3. Improve enable logic to consume low current when enable logic is 0.
   
